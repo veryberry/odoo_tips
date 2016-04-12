@@ -1703,6 +1703,9 @@ def db_monodb(httprequest=None):
     if len(dbs) == 1:
         return dbs[0]
 
+    if 'db' in httprequest.args:
+        return httprequest.args
+
     if openerp.tools.config.get('db_name'):
         return openerp.tools.config.get('db_name')
 
